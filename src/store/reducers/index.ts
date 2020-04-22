@@ -1,19 +1,11 @@
 import {combineReducers} from 'redux';
-import login from './login';
-import user from './user';
-import event from './event';
-import repository from './repository';
-import issue from './issue';
+import login from './Login'
 
 export default combineReducers({
-  login: login,
-  user: user,
-  event: event,
-  repository: repository,
-  issue: issue,
+    login: login,
 });
 
-export function clear(state) {
-  state().event.received_events_data_list = [];
-  state().repository.trend_repos_data_list = [];
+export function clear(state: any) {
+    state().event.received_events_data_list = [];
+    state().repository.trend_repos_data_list = [];
 }

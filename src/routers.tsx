@@ -1,13 +1,36 @@
+import React from "react";
+import {Lightbox, Router, Scene} from "react-native-router-flux";
+import routerStyles from "./resources/styles/RouterStyles";
+import PageBackUtils from "./utils/BackUtils";
+import SplashPage from "./pages/SplashPage";
+import LoginPage from "./pages/LoginPage";
+
 /**
  * 这个getRouters是一个箭头函数
  */
-import {Lightbox, Router, Scene} from "react-native-router-flux";
-import routerStyles from "./resources/styles/RouterStyles";
-
 const getRouters = () => {
     return (
-        <Router></Router>
+        <Router
+            getSceneStyle={() => {
+                return routerStyles.routerStyle;
+            }}
+            backAndroidHandler={PageBackUtils()}>
+            <Lightbox>
+                <Scene key="main">
+                    <Scene
+                        key="SplashPage"
+                        component={SplashPage}
+                        hideNavBar
+                        hideTabBar
+                        hide
+                    />
+                </Scene>
+                <Scene key="LoginPage">
+                    <Scene component={LoginPage} showLabel={false} hideNavBar/>
+                </Scene>
+            </Lightbox>
+        </Router>
     );
 }
-// 默认导出getRouters
+
 export default getRouters;

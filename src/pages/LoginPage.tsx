@@ -16,6 +16,6 @@ export default class SplashPage extends BaseComponent {
     }
 
     render(): React.ReactElement {
-        return <Text>这是欢迎页面</Text>;
+        return <Text>这是登录页面</Text>;
     }
 }
