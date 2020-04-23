@@ -5,7 +5,7 @@ const routerStyles = StyleSheet.create({
     routerStyle: {
         //设置router的样式
         flex: 1,
-        backgroundColor: ColorRes.CommonColor.mainBackgroundColor,
+        backgroundColor: ColorRes.Common.mainBackgroundColor,
         shadowColor: undefined,
         shadowOffset: undefined,
         shadowOpacity: undefined,

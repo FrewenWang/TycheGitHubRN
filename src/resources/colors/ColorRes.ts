@@ -1,9 +1,9 @@
 export default {
-    CommonColor: {
+    Common: {
         white: '#ffffff',
         mainBackgroundColor: '#aeffce'
     },
-    HomeColor: {
+    Home: {
         // bgColor: this.CommonColor.white,
         titleColor: '#acfbee',
     },

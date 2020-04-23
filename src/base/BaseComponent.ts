@@ -1,10 +1,9 @@
 import {Component} from 'react';
-import {ViewProps} from 'react-native';
 import Logger from "../utils/Logger";
 
 const TAG = 'BaseComponent';
 
-export abstract class BaseComponent extends Component<ViewProps, {}> {
+export abstract class BaseComponent<ViewProps, State> extends Component<ViewProps, State> {
     protected constructor(props: ViewProps) {
         super(props);
         Logger.info(TAG, 'constructor called');
