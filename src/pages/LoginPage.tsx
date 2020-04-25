@@ -5,7 +5,7 @@ import {BaseComponent} from "../base/BaseComponent";
 /**
  * 应用闪屏页面
  */
-export default class SplashPage extends BaseComponent {
+export default class SplashPage extends BaseComponent<any, any> {
     public constructor(props: ViewProps) {
         super(props);
 

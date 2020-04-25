@@ -8,18 +8,37 @@ import {screenHeight, screenWidth} from "../resources/dimens/DimenRes";
 import ImageRes from "../resources/images/ImageRes";
 import Styles from "../resources/styles/StyleRes";
 import AnimRes from "../resources/ainimations/AnimRes";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import loginActions from "../store/actions/Login"
+import userActions from '../store/actions/User'
+import {Actions} from "react-native-router-flux";
+import {PageName} from "../constant/PageName";
+
 
 interface SplashPageState {
-    progress: any
+    progress: Animated.Value;
 }
 
 
 /**
  * 应用闪屏页面
  */
+
+// @ts-ignore
+@connect(
+    (state: any) => ({
+        state
+    }), (dispatch: any) => ({
+        actions: bindActionCreators(loginActions, dispatch),
+    })
+)
 export default class SplashPage extends BaseComponent<ViewProps, SplashPageState> {
+    private animation: LottieView | null = null;
+
     public constructor(props: ViewProps) {
         super(props);
+
         this.state = {
             progress: new Animated.Value(0),
         };
@@ -27,6 +46,10 @@ export default class SplashPage extends BaseComponent<ViewProps, SplashPageState
 
     public componentDidMount(): void {
         super.componentDidMount();
+        //是否登陆，是否用户信息
+        userActions.initUserInfo().then((response) => {
+            this.toNext(response)
+        });
         Animated.timing(this.state.progress, {
             useNativeDriver: false,
             toValue: 1,
@@ -36,9 +59,7 @@ export default class SplashPage extends BaseComponent<ViewProps, SplashPageState
     }
 
     public componentWillUnmount(): void {
-        if (this.refs.lottieView) {
-            this.refs.lottieView.reset();
-        }
+        this.animation?.reset()
     }
 
     render(): React.ReactElement {
@@ -53,7 +74,9 @@ export default class SplashPage extends BaseComponent<ViewProps, SplashPageState
                 <View style={[Styles.absoluteFull, SplashStyles.centered, {justifyContent: "flex-end"}]}>
                     <View style={[SplashStyles.centered, {width: 150, height: 150}]}>
                         <LottieView
-                            ref="lottieView"
+                            ref={animation => {
+                                this.animation = animation;
+                            }}
                             style={{
                                 width: 150,
                                 height: 150,
@@ -64,5 +87,16 @@ export default class SplashPage extends BaseComponent<ViewProps, SplashPageState
                 </View>
             </View>
         </View>);
+    }
+
+    private toNext(response: any) {
+        setTimeout(() => {
+            if (response && response.response) {
+                //清除路由栈，将跳转的路由入栈
+                Actions.reset("root");
+            } else {
+                Actions.reset(PageName.LoginPage.valueOf());
+            }
+        }, 2100);
     }
 }

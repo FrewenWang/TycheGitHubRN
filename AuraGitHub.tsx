@@ -4,6 +4,7 @@ import {Provider} from "react-redux";
 import getRouters from "./src/routers";
 import store from "./src/store/CreateReducer";
 import Logger from "./src/utils/Logger";
+import {BaseComponent} from "./src/base/BaseComponent";
 
 interface AuraGitHubState {
     store: any;
@@ -11,10 +12,9 @@ interface AuraGitHubState {
 }
 
 const TAG = "AuraGitHub";
-export default class AuraGitHub extends Component<ViewProps, AuraGitHubState> {
+export default class AuraGitHub extends BaseComponent<ViewProps, AuraGitHubState> {
     constructor() {
         super({});
-        Logger.info(TAG, 'constructor');
         this.state = {
             store: store,
             show: true,
