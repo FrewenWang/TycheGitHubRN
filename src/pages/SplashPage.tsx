@@ -14,6 +14,7 @@ import loginActions from "../store/actions/Login"
 import userActions from '../store/actions/User'
 import {Actions} from "react-native-router-flux";
 import {PageName} from "../constant/PageName";
+import Logger from "../utils/Logger";
 
 
 interface SplashPageState {
@@ -25,6 +26,7 @@ interface SplashPageState {
  * 应用闪屏页面
  */
 
+const TAG = 'SplashPage';
 // @ts-ignore
 @connect(
     (state: any) => ({
@@ -91,11 +93,12 @@ export default class SplashPage extends BaseComponent<ViewProps, SplashPageState
 
     private toNext(response: any) {
         setTimeout(() => {
+            Logger.info(TAG, `response = ${response}`)
             if (response && response.response) {
                 //清除路由栈，将跳转的路由入栈
                 Actions.reset("root");
             } else {
-                Actions.reset(PageName.LoginPage.valueOf());
+                Actions.reset(PageName.LoginPage);
             }
         }, 2100);
     }
