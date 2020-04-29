@@ -11,7 +11,7 @@ import LottieView from 'lottie-react-native';
 import {BaseComponent} from '../base/BaseComponent';
 import SplashStyles from '../resources/styles/SplashStyles';
 import ColorRes from '../resources/colors/ColorRes';
-import {screenHeight, screenWidth} from '../resources/dimens/DimenRes';
+import DimensionRes from '../resources/dimensions/DimensionRes';
 import ImageRes from '../resources/images/ImageRes';
 import Styles from '../resources/styles/StyleRes';
 import AnimRes from '../resources/ainimations/AnimRes';
@@ -85,7 +85,7 @@ export default class SplashPage extends BaseComponent<ViewProps,
                     <Image
                         source={ImageRes.Splash.bg}
                         resizeMode={'contain'}
-                        style={{width: screenWidth, height: screenHeight}}
+                        style={{width: DimensionRes.Common.screenWidth, height: DimensionRes.Common.screenHeight}}
                     />
                     <View
                         style={[

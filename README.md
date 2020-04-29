@@ -17,6 +17,8 @@ Redux是JavaScript应用程序的可预测状态容器:[https://redux.js.org/int
 
 用于ReactNative的LottieView:[https://github.com/react-native-community/lottie-react-native](https://github.com/react-native-community/lottie-react-native)
 
+React本机应用程序本地化工具箱(以前叫React-Native-languages):[https://github.com/react-native-community/react-native-localize](https://github.com/react-native-community/react-native-localize)
 
+还有一款程序本地化工具箱(已过时)：[https://github.com/AlexanderZaytsev/react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
 
 Babel的装饰器插件：[https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
