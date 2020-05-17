@@ -9,7 +9,7 @@ ReactNativeSamples
 
 首先需要安装ReactNavigation的相关依赖：[https://reactnavigation.org/docs/4.x/getting-started/](https://reactnavigation.org/docs/4.x/getting-started/)
 
-高效且灵活的官方React响应式绑定的Redux:[https://github.com/reduxjs/react-redux](https://github.com/reduxjs/react-redux)
+
 
 Redux是JavaScript应用程序的可预测状态容器:[https://redux.js.org/introduction/getting-started](https://redux.js.org/introduction/getting-started)
 
@@ -22,3 +22,44 @@ React本机应用程序本地化工具箱(以前叫React-Native-languages):[http
 还有一款程序本地化工具箱(已过时)：[https://github.com/AlexanderZaytsev/react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
 
 Babel的装饰器插件：[https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
+
+
+
+
+
+### 项目依赖的开源框架
+
+1、文本框的自定义控件：文本输入与自定义标签和图标动画iOS和android。由react native创建，并受到codrop的启发
+
+https://github.com/halilb/react-native-textinput-effects
+
+2、React Native的可定制图标，支持导航栏/标签栏/工具栏android、图像源和完整样式。
+
+https://github.com/oblador/react-native-vector-icons
+
+使用这个框架遇到问题：
+
+```
+Unrecognized font family 'FontAwesome' 
+```
+
+
+
+3、高效且灵活的官方React响应式绑定的Redux
+
+[https://github.com/reduxjs/react-redux](https://github.com/reduxjs/react-redux)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
