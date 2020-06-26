@@ -4,13 +4,11 @@
  * @constructor
  */
 export default function IgnoreYellowWarning() {
-    return function () {
-        console.ignoredYellowBox = [
-            'Warning: BackAndroid is deprecated. Please use BackHandler instead.',
-            'source.uri should not be an empty string',
-            'Invalid props.style key',
-        ];
-        // 关闭全部黄色警告
-        console.disableYellowBox = true;
-    }
+  console.ignoredYellowBox = [
+    'Warning: BackAndroid is deprecated. Please use BackHandler instead.',
+    'source.uri should not be an empty string',
+    'Invalid props.style key',
+  ];
+  // 关闭全部黄色警告
+  console.disableYellowBox = true;
 }
